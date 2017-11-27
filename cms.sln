@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cms", "cms\cms.csproj", "{C8EB521E-F3F3-4E46-B066-D9C9BE1BD357}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cms", "cms\cms.csproj", "{C8EB521E-F3F3-4E46-B066-D9C9BE1BD357}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cms.Infrastructure", "cms.Infrastructure\cms.Infrastructure.csproj", "{281B5EAB-C2CF-427C-A085-BFDC838155F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cms.Infrastructure", "cms.Infrastructure\cms.Infrastructure.csproj", "{281B5EAB-C2CF-427C-A085-BFDC838155F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cms.Utilities", "cms.Utilities\cms.Utilities.csproj", "{12EEAFF9-76DD-434D-8322-824AEF8A0F16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cms.Utilities", "cms.Utilities\cms.Utilities.csproj", "{12EEAFF9-76DD-434D-8322-824AEF8A0F16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cms.Data", "cms.Data\cms.Data.csproj", "{627B2410-0CB5-43E1-8B53-45BD906CF6C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cms.Data", "cms.Data\cms.Data.csproj", "{627B2410-0CB5-43E1-8B53-45BD906CF6C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cms.Data.EF", "cms.Data.EF\cms.Data.EF.csproj", "{478858C9-7919-4E16-81D5-359801454C17}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cms.Business", "cms.Business\cms.Business.csproj", "{AA10479F-8FF6-4665-A62B-E66565D73BB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cms.Data.EF", "cms.Data.EF\cms.Data.EF.csproj", "{478858C9-7919-4E16-81D5-359801454C17}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{123BEA84-B4D7-449A-902F-BED35EDBDE1C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Business", "2 - Business", "{62818DCC-E402-498B-BB52-89274638A7EA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{62818DCC-E402-498B-BB52-89274638A7EA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{60F50B25-9150-49A8-BB21-7BDAA7B39217}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{4F6CAFD7-7699-48BE-A537-D194664DC974}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cms.Application", "cms.Application\cms.Application.csproj", "{75097E9B-F5B1-4C9B-BE0A-E97856A2C99D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,10 +49,10 @@ Global
 		{478858C9-7919-4E16-81D5-359801454C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{478858C9-7919-4E16-81D5-359801454C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{478858C9-7919-4E16-81D5-359801454C17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA10479F-8FF6-4665-A62B-E66565D73BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA10479F-8FF6-4665-A62B-E66565D73BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA10479F-8FF6-4665-A62B-E66565D73BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA10479F-8FF6-4665-A62B-E66565D73BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75097E9B-F5B1-4C9B-BE0A-E97856A2C99D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75097E9B-F5B1-4C9B-BE0A-E97856A2C99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75097E9B-F5B1-4C9B-BE0A-E97856A2C99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75097E9B-F5B1-4C9B-BE0A-E97856A2C99D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,7 +63,7 @@ Global
 		{12EEAFF9-76DD-434D-8322-824AEF8A0F16} = {4F6CAFD7-7699-48BE-A537-D194664DC974}
 		{627B2410-0CB5-43E1-8B53-45BD906CF6C3} = {60F50B25-9150-49A8-BB21-7BDAA7B39217}
 		{478858C9-7919-4E16-81D5-359801454C17} = {60F50B25-9150-49A8-BB21-7BDAA7B39217}
-		{AA10479F-8FF6-4665-A62B-E66565D73BB3} = {62818DCC-E402-498B-BB52-89274638A7EA}
+		{75097E9B-F5B1-4C9B-BE0A-E97856A2C99D} = {62818DCC-E402-498B-BB52-89274638A7EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5E5786DA-4C7A-441C-A06E-B91AEF80E1DC}
