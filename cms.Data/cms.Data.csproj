@@ -4,4 +4,11 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Enum\" />
+    <Folder Include="IRepositories\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
 </Project>
