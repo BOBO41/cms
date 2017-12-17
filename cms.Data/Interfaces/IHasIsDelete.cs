@@ -6,6 +6,6 @@ namespace cms.Data.Interfaces
 {
     public interface IHasIsDelete
     {
-        bool IsDeleted { set; get; }
+        bool? IsDeleted { set; get; }
     }
 }

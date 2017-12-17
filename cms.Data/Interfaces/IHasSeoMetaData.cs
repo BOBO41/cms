@@ -6,8 +6,7 @@ namespace cms.Data.Interfaces
 {
     public interface IHasSeoMetaData
     {
-
-        string MetaKeywords { set; get; }
+        string MetaKeyword { set; get; }
         string MetaDescription { get; set; }
     }
 }

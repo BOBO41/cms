@@ -6,6 +6,6 @@ namespace cms.Utilities.Constants
 {
     public class CommonConstants
     {
-        public const string AdminRole = "Admin";
+        public const string SuperAdminRole = "SuperAdmin";
     }
 }
