@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="AutoMapper\" />
     <Folder Include="Interfaces\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Services\" />

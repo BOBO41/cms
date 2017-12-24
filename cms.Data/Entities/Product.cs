@@ -24,6 +24,7 @@ namespace cms.Data.Entities
         [StringLength(255)]
         public string Description { get; set; }
 
+        [Required]
         public string Content { get; set; }
 
         [Required]
@@ -33,6 +34,8 @@ namespace cms.Data.Entities
         public virtual Category ProductCategory { set; get; }
 
         public int? ParentId { get; set; }
+
+        [Required]
         public string FriendlyURL { get; set; }
 
         public bool? HotFlag { get; set; }

@@ -21,6 +21,11 @@ namespace cms.Data.Entities
         [ForeignKey("ProductId")]
         public virtual Product ProductMedia { set; get; }
 
+        public int? PostId { get; set; }
+
+        [ForeignKey("PostId")]
+        public virtual Post PostMedia { set; get; }
+
         [Required]
         public int CategoryId { get; set; }
 
