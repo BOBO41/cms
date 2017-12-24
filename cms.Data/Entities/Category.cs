@@ -24,7 +24,7 @@ namespace cms.Data.Entities
         public string Description { get; set; }
         public int? ParentId { get; set; }
         public string FriendlyURL { get; set; }
-        public bool? Status { get; set; }
+        public int? Status { get; set; }
         public string MetaKeyword { get; set; }
         public string MetaDescription { get; set; }
         public int SorOrder { get; set; }
@@ -32,7 +32,6 @@ namespace cms.Data.Entities
         public Guid OwnerId { get; set; }
         public DateTime DateModified { get; set; }
         public Guid ModifiedOwnerId { get; set; }
-        public int EnumId { get; set; }
 
         public virtual ICollection<Product> Products { set; get; }
     }

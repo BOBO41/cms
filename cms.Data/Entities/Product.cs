@@ -2,6 +2,7 @@
 using cms.Infrastructure.Shared;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
@@ -11,6 +12,11 @@ namespace cms.Data.Entities
     [Table("Products")]
     public class Product : DomainEntity<int>, ISwitchable, IDateTracking, IHasSeoMetaData, IHasOwner, IHasIsDelete
     {
+        public Product()
+        {
+            Medias = new List<Media>();
+        }
+
         [StringLength(255)]
         [Required]
         public string Name { get; set; }
@@ -33,7 +39,7 @@ namespace cms.Data.Entities
 
         public int? ViewCount { get; set; }
 
-        public bool? Status { get; set; }
+        public int? Status { get; set; }
         public string MetaKeyword { get; set; }
         public string MetaDescription { get; set; }
         public DateTime DateCreated { get; set; }
@@ -41,15 +47,24 @@ namespace cms.Data.Entities
         public DateTime DateModified { get; set; }
         public Guid ModifiedOwnerId { get; set; }
 
-        public int? ProductImageId { get; set; }
-        public int? ProductPrice { get; set; }
-        public int? ProductUnits { get; set; }
+        public virtual ICollection<Media> Medias { set; get; }
 
-        public int? Quantity { get; set; }
-        public bool? IsDeleted { get; set; }
+        [Required]
+        [DefaultValue(0)]
+        public decimal Price { get; set; }
+        public decimal? PromotionPrice { get; set; }
+        [Required]
+        public decimal OriginalPrice { get; set; }
+
+        public int? Unit { get; set; }
+
+        public int? ProductExpandId { get; set; }
+        [ForeignKey("ProductExpandId")]
+        public virtual ProductExpand ProductExpand { get; set; }
 
         public Guid ApproveUser { get; set; }
         public string ApproveUserName { get; set; }
         public DateTime ApproveDate { get; set; }
+        public bool? IsDeleted { get; set; }
     }
 }

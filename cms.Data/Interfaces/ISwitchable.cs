@@ -7,6 +7,6 @@ namespace cms.Data.Interfaces
 {
     public interface ISwitchable
     {
-        bool? Status { set; get; }
+        int? Status { set; get; }
     }
 }
