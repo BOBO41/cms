@@ -39,6 +39,8 @@ namespace cms.Data.Entities
         public DateTime DateModified { get; set; }
 
         public string Description { get; set; }
+
+        public string Caption { get; set; }
         public Status Status { get; set; }
 
     }

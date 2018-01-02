@@ -11,5 +11,6 @@ namespace cms.Data.Entities
     {
         public double Size { get; set; }
         public string Color { get; set; }
+        public string Quantity { get; set; }
     }
 }
