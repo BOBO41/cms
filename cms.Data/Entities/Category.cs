@@ -1,4 +1,5 @@
-﻿using cms.Data.Interfaces;
+﻿using cms.Data.Enum;
+using cms.Data.Interfaces;
 using cms.Infrastructure.Shared;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace cms.Data.Entities
         {
             Products = new List<Product>();
         }
-
+        
         [Required]
         [MaxLength(256)]
         public string Name { get; set; }
@@ -24,10 +25,10 @@ namespace cms.Data.Entities
         public string Description { get; set; }
         public int? ParentId { get; set; }
         public string FriendlyURL { get; set; }
-        public int? Status { get; set; }
+        public Status Status { get; set; }
         public string MetaKeyword { get; set; }
         public string MetaDescription { get; set; }
-        public int SorOrder { get; set; }
+        public int SortOrder { get; set; }
         public DateTime DateCreated { get; set; }
         public Guid OwnerId { get; set; }
         public DateTime DateModified { get; set; }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace cms.Data.Entities
 {
-    public class Tag : DomainEntity<int>
+    public class Tag : DomainEntity<string>
     {
         [MaxLength(50)]
         [Required]

@@ -1,4 +1,5 @@
-﻿using cms.Data.Interfaces;
+﻿using cms.Data.Enum;
+using cms.Data.Interfaces;
 using cms.Infrastructure.Shared;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace cms.Data.Entities
         [DefaultValue(false)]
         public bool IsCommentEnabled { get; set; }
 
-        public int? Status { get; set; }
+        public Status Status { get; set; }
         public string MetaKeyword { get; set; }
         public string MetaDescription { get; set; }
 

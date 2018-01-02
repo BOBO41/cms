@@ -1,4 +1,5 @@
-﻿using cms.Data.Interfaces;
+﻿using cms.Data.Enum;
+using cms.Data.Interfaces;
 using cms.Infrastructure.Shared;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ namespace cms.Data.Entities
         public DateTime DateModified { get; set; }
 
         public string Description { get; set; }
-        public int? Status { get; set; }
-        
+        public Status Status { get; set; }
+
     }
 }
