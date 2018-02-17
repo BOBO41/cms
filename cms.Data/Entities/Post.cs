@@ -10,6 +10,7 @@ using System.Text;
 
 namespace cms.Data.Entities
 {
+    [Table("Posts")]
     public class Post : DomainEntity<int>, IDateTracking, IHasOwner, ISwitchable, IHasSeoMetaData, IHasIsDelete
     {
         public Post()
