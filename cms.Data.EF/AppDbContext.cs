@@ -20,12 +20,13 @@ namespace cms.Data.EF
         }
 
         public DbSet<Function> Functions { get; set; }
-
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<AppRole> AppRoles { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Contact> ContactDetails { get; set; }
         public DbSet<DisplayContent> DisplayContents { get; set; }
         public DbSet<cms.Data.Entities.Enum>  Enums { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<Media> Medias { get; set; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Post> Posts { get; set; }
@@ -34,6 +35,10 @@ namespace cms.Data.EF
         public DbSet<ProductExpand> ProductExpands { get; set; }
         public DbSet<ProductTag> ProductTags { get; set; }
         public DbSet<Tag> Tags { set; get; }
+        public DbSet<Bill> Bills { set; get; }
+        public DbSet<BillDetail> BillDetails { set; get; }
+        public DbSet<Color> Colors { set; get; }
+        public DbSet<Size> Sizes { set; get; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

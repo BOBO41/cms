@@ -62,10 +62,6 @@ namespace cms.Data.Entities
 
         public int? Unit { get; set; }
 
-        public int? ProductExpandId { get; set; }
-        [ForeignKey("ProductExpandId")]
-        public virtual ProductExpand ProductExpand { get; set; }
-
         public Guid ApproveUser { get; set; }
         public string ApproveUserName { get; set; }
         public DateTime ApproveDate { get; set; }

@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using cms.Data;
 using cms.Models;
 using cms.Services;
+using cms.Data.EF;
+using cms.Data.Entities;
 
 namespace cms
 {
@@ -26,21 +28,26 @@ namespace cms
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                o => o.MigrationsAssembly("cms.Data.EF")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+            services.AddIdentity<AppUser, AppRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
             // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
+            services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
+            // Add application services.
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<DbInitializer>();
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, DbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -63,6 +70,7 @@ namespace cms
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            dbInitializer.Seed().Wait();
         }
     }
 }
