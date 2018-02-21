@@ -17,6 +17,23 @@ namespace cms.Data.Entities
         {
             Products = new List<Product>();
         }
+
+        public Category(string name, string description, int? parentId, string friendlyURL, Status status, string metaKeyword,
+            string metaDescription, int sortOrder, DateTime dateCreated, Guid ownerId, DateTime dateModified, Guid modifiedOwnerId)
+        {
+            Name = name;
+            Description = description;
+            ParentId = parentId;
+            FriendlyURL = friendlyURL;
+            Status = status;
+            MetaKeyword = metaKeyword;
+            MetaDescription = metaDescription;
+            SortOrder = sortOrder;
+            DateCreated = dateCreated;
+            OwnerId = ownerId;
+            DateModified = DateModified;
+            ModifiedOwnerId = modifiedOwnerId;
+        }
         
         [Required]
         [MaxLength(256)]

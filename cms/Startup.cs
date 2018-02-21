@@ -13,6 +13,11 @@ using cms.Models;
 using cms.Services;
 using cms.Data.EF;
 using cms.Data.Entities;
+using AutoMapper;
+using cms.Data.IRepositories;
+using cms.Application.Interfaces;
+using cms.Data.EF.Repositories;
+using cms.Application.Implementation;
 
 namespace cms
 {
@@ -36,13 +41,21 @@ namespace cms
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
+            // Add Automapper
+            services.AddSingleton(Mapper.Configuration);
+            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
+
             // Add application services.
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
-            // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+
             services.AddTransient<DbInitializer>();
+
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<ICategoryService, CategoryService>();
+
             services.AddMvc();
         }
 

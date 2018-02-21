@@ -25,7 +25,6 @@ namespace cms.Data.EF
         public DbSet<Category> Categories { get; set; }
         public DbSet<Contact> ContactDetails { get; set; }
         public DbSet<DisplayContent> DisplayContents { get; set; }
-        public DbSet<cms.Data.Entities.Enum>  Enums { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<Media> Medias { get; set; }
         public DbSet<Permission> Permissions { get; set; }
