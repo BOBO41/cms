@@ -47,6 +47,9 @@ namespace cms.Data.EF
                     FullName = "Dang Quang Vinh",
                     Email = "admin@gmail.com",
                     Balance = 0,
+                    DateCreated = DateTime.Now,
+                    DateModified = DateTime.Now,
+                    Status = Status.Active
                 }, "123654$");
                 var user = await _userManager.FindByNameAsync("vinhdang");
                 await _userManager.AddToRoleAsync(user, "SuperAdmin");
@@ -95,6 +98,7 @@ namespace cms.Data.EF
                 };
                 _context.Sizes.AddRange(listSize);
             }
+            await _context.SaveChangesAsync();
         }
     }
 }
