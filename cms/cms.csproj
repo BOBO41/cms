@@ -5,6 +5,13 @@
     <UserSecretsId>aspnet-cms-AA0FBD6B-ED85-41C8-B9E9-501AD9566810</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="wwwroot\app\NewFolder\**" />
+    <Content Remove="wwwroot\app\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\app\NewFolder\**" />
+    <None Remove="wwwroot\app\NewFolder\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.2.2" />
@@ -29,6 +36,7 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="wwwroot\app\controllers\product\" />
   </ItemGroup>
 
 </Project>
