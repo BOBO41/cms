@@ -1,7 +1,7 @@
 ﻿var loginController = function() {
     this.Initialize = function () {
         RegisterEvents();
-    };
+    }
 
     var RegisterEvents = function () {
         $("#btnLogin").on('click', function (e) {
@@ -10,7 +10,7 @@
             var password = $("#txtPassword").val();
             Login(user, password);
         });
-    };
+    }
 
     var Login = function (user, pass) {
         $.ajax({
@@ -30,5 +30,5 @@
                 }
             }
         })
-    };
+    }
 }
