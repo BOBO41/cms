@@ -18,6 +18,7 @@ using cms.Data.IRepositories;
 using cms.Application.Interfaces;
 using cms.Data.EF.Repositories;
 using cms.Application.Implementation;
+using Microsoft.Extensions.Logging;
 
 namespace cms
 {
@@ -79,8 +80,9 @@ namespace cms
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, DbInitializer dbInitializer)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddFile("Logs/cms-{Date}.txt");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
